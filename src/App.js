@@ -1,20 +1,34 @@
-import  { useState } from 'react';
-import { List } from "./List"
+import  React from 'react';
+import { List } from "./List";
 
-function App() {
-  const [description, setDescription] = useState('Before Click');
-  const changeDescription = () => {
-    setDescription('After Click');
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {description: "Before click"}
   }
-  
-  return (
-    <div>
-      { description }
-      <List title="This is list title"/>
-      <button onClick={changeDescription}>Button</button>
-    </div>
-    
-  );
+
+  changeDescription() {
+    this.setState({
+      description:"After Click"
+    })
+  }
+
+  render () {
+    const { description } = this.state;
+    return (
+      <div>
+        <h4>
+        Hello! I'm in the appComponent
+        </h4>
+        { description }
+        <List title="This is a title in the appComponent" />
+        <button onClick={() => this.changeDescription()}>
+        Button
+        </button>
+      </div>
+    )
+  }
 }
+
 
 export default App;

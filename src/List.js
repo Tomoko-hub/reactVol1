@@ -1,16 +1,20 @@
-export const List = ({ title }) => {
-    
-    return(
-        <div>
-            <h4>
-                { title }
-            </h4>
+import React from 'react';
+
+export class List extends React.Component {
+
+    render () {
+        const {title} = this.props;
+        return(
             <div>
-                This is List
+                <h2>
+                    { title }
+                </h2>
+                <div>
+                    This is List
+                </div>
             </div>
-        </div>
-    )
+        )
+
+    }
 
 }
-
-    
