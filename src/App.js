@@ -1,30 +1,28 @@
 import  React from 'react';
 import { List } from "./List";
+import { Form } from "./Form";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {description: "Before click"}
-  }
-
-  changeDescription() {
-    this.setState({
-      description:"After Click"
-    })
+    this.state = {tab:'list'}
   }
 
   render () {
-    const { description } = this.state;
+    const { tab } = this.state;
+    
     return (
       <div>
-        <h4>
-        Hello! I'm in the appComponent
-        </h4>
-        { description }
-        <List title="This is a title in the appComponent" />
-        <button onClick={() => this.changeDescription()}>
-        Button
-        </button>
+        <header>
+          <ul>
+            <li onClick={() => this.setState({ tab: 'list'})}>This is a List.</li>
+            <li onClick={() => this.setState({ tab: 'form'})}>This is a form</li>
+          </ul>
+        </header>
+        <hr />
+        {
+          tab === 'list' ? <List /> : <Form />
+        }
       </div>
     )
   }
