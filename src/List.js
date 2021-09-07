@@ -1,13 +1,21 @@
-export const List = ({ title }) => {
+const LANGUAGES = [
+    'JavaScript',
+    'TypeScript',
+    'HTML',
+    'CSS',
+    'SCSS',
+    'React',
+    'Angular'
+]
+export const List = () => {
     
     return(
         <div>
-            <h4>
-                { title }
-            </h4>
-            <div>
-                This is List
-            </div>
+            { 
+                LANGUAGES.map((lang, index) => {
+                    return<div key = { index }>{ lang }</div>
+                })
+            }
         </div>
     )
 
