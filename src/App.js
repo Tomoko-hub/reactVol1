@@ -6,10 +6,7 @@ import { LANGUAGES } from "./const/languages";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      tab:'list',
-      langs:LANGUAGES,
-    }
+    this.state = { tab:'list', langs:LANGUAGES };
   }
 
   addLang(lang) {
