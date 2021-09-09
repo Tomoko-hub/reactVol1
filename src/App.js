@@ -12,7 +12,7 @@ class App extends React.Component {
   addLang(lang) {
     this.setState({
       tab: 'list',
-      langs: [...this.state.langs, lang]
+      langs: [...this.state.langs, lang],
     });
   
   }
