@@ -1,4 +1,4 @@
-export const LANGUAGES = [
+const LANGUAGES = [
     'JavaScript',
     'TypeScript',
     'HTML',
@@ -7,3 +7,9 @@ export const LANGUAGES = [
     'React',
     'Angular'
 ];
+
+export const getLANGUAGES = () => {
+    return new Promise ((resolve) => {
+        setTimeout(() => { resolve(LANGUAGES);}, 1000);
+    });
+};
