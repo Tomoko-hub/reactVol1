@@ -20,8 +20,9 @@ export class Form extends React.Component {
                     <div>
                         <input 
                             type="text"
-                            value={text}
-                            onChange={(e) => this.setState({text:e.target.value})} />
+                            value={ text }
+                            onChange={(e) => this.setState({text:e.target.value})}
+                         />
                     </div>
                     <div>
                         <button>ADD</button>

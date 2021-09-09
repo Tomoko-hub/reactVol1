@@ -16,7 +16,6 @@ class App extends React.Component {
     this.setState({
       tab: 'list',
       langs: [...this.state.langs, lang]
-      
     });
   
   }
